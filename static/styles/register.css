@@ -1,0 +1,158 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+:root{
+    --main-color: #54adff;
+    --font-color: #2f2f2f;
+    --border-color: #d6d8e7;
+    --white: #ffffff;
+    --grey: #89939e;
+    --light-grey: #f9f9ff;
+}
+html{
+    scroll-behavior: smooth;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 40px;
+    border: 2px solid #f1f1f1;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+*, ::before, ::after{
+    box-sizing: border-box;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "poppins", sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.8;
+    background-color: var(--grey-white);
+}
+input, button, select{
+      font-family: poppins, sans-serif;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+}
+::placeholder{
+      color: var(--grey);
+}
+.site{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100vw;
+      background-color: var(--light-grey);
+}
+.container{
+      max-width: 500px;
+      width: 400px;
+      background-color: var(--white);
+      border-radius: 8px;
+      padding: 2em;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 10%);
+
+}
+.logo > a{
+      color: var(--main-color);
+      font-size: 1.5em;
+      font-weight: 700;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+/* .container > p:first-of-type{
+      font-size: 1.2em;
+      font-weight: 600;
+      color: var(--font-color);
+      text-align: center;
+} */
+.container > p:nth-of-type(1){
+      font-size: 0.875em;
+      font-weight: 500;
+      color: var(--grey);
+      text-align: center;
+}
+.container > form{
+      margin-top: 1em;
+}
+.container > form > div{
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1em;
+      position: relative;
+}
+.container > form > div >a{
+      color: var(--main-color);
+      text-align: right;
+      margin-top: 0.5em;
+      font-weight: 500;
+      font-size: 0.75em;
+}
+form > div > label{
+      font-size: 0.75em;
+      margin-bottom: 0.5em;
+      font-weight: 500;
+}
+form > div > input{
+      height: 40px;
+      border-radius: 0.5em;
+      border: 1px solid var(--border-color);
+      padding: 0 1em 0 3em;
+      outline: 1px solid transparent;
+      
+}
+form > div > i{
+      color: var(--grey);
+      font-size: 1em;
+      position: absolute;
+      top: 2em;
+      left: 0.8em;
+}
+form > div > input:focus{
+      outline-color: var(--main-color);
+}
+form > div > button{
+      background-color: var(--main-color);
+      color: var(--white);
+      font-weight: 700;
+      border: none;
+      height: 40px;
+      border-radius: 0.5em;
+      cursor: pointer;
+
+}
+form > span{
+      color: var(--grey);
+      font-size: 0.875em;
+      text-align: center;
+      display: block;
+      font-weight: 500;
+}
+form > span > a{
+      color: var(--main-color);
+}

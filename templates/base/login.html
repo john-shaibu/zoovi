@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="keywords" content="video editor, video, video sharing platform, video website">
+      <meta name="description" content="zoovi is a web application that allows you to upload your video to be able to edit them or share them to any platform">
+      <link rel="stylesheet" href="{% static 'styles/login.css' %}">
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+      <title>Login - Zoovi</title>
+
+</head>
+<body>
+      <div class="site">
+            <div class="container">
+                  <div class="logo">
+                        <a href="#">Zoovi</a>
+                  </div>
+                  <p>Login to your account</p>
+                  <form action="#" method="post">
+                        {% csrf_token %}
+                        <div>
+                              <label for="email">Email</label>
+                              <input type="email" name="email" id="" placeholder="youremail@example.com" autofocus>
+                              <i class="ri-mail-line"></i>
+                        </div>
+                        <div>
+                              <label for="password">Password</label>
+                              <input type="password" name="password" id="" placeholder="yourpassword">
+                              <i class="ri-key-line"></i>
+                              <a href="#">Forgot password?</a>
+                        </div>
+                        <div>
+                              <button type="submit">Login</button>
+                        </div>
+                        <span>Not a member? <a href="{% url 'register' %}">Sign up</a></span>
+                  </form>
+            </div>
+      </div>   
+</body>
+</html>

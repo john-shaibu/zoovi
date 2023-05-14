@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="keywords" content="video editor, video, video sharing platform, video website">
+      <meta name="description" content="zoovi is a web application that allows you to upload your video to be able to edit them or share them to any platform">
+      <link rel="stylesheet" href="{% static 'styles/home.css' %}">
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+      <title>Home - Zoovi</title>
+
+</head>
+<body>
+      <div class="site">
+            <header>
+                  <div class="header_content">
+                        <div class="logo">
+                              <a href="home.html">ZOOVI</a>
+                        </div>
+                        <nav>
+                              <!-- <i class="ri-notification-line close_mobile_menu"></i> -->
+                              <ul>
+                                    <li><a href="{% url 'home' %}">Home</a></li>
+                                    <li><a href="{% url 'register' %}">About</a></li>
+                                    <li><a href="#">Blog</a></li>
+                              </ul>
+                              <div class="cta_or_user">
+                                    <div class="login_signup_btn">
+                                          <a href="{% url 'login' %}" id="openLoginForm"><button>Log in</button></a>
+                                          <a href="{% url 'register' %}" id="openRegisterForm"><button>Sign up</button></a>
+                                    </div>
+                              </div>
+                        </nav>
+                        <i class="ri-menu-line" id="open_mobile_menu"></i>
+                  </div>
+                  <script>
+                        let menuOpener = document.querySelector('#open_mobile_menu');
+                        let clt = document.querySelector('.header_content');
+
+                        menuOpener.addEventListener('click', () => {
+                              clt.classList.toggle('openMobileMenu');
+                              if (clt.classList.contains('openMobileMenu')){
+                                    // console.log('present');
+                                    menuOpener.setAttribute('class', 'ri-close-line');
+                              } else {
+                                    menuOpener.setAttribute('class', 'ri-menu-line');
+                              }
+                        });
+                  </script>
+            </header>
+            
+            <main>
+                  <div class="hero">
+                        <div class="hero_inner">
+                              <div class="left">
+                                    <h1>
+                                          Post your videos anywhere With <br>One Click.
+                                    </h1>
+                                    <p>
+                                          Upload your videos to every platform you love with one click. No more posting everywhere manually.
+                                    </p>
+                                    <a href="{% url 'register' %}"><button>Get started</button></a>
+                              </div>
+                              <div class="right">
+                                    <img src="{% static 'img/1111.svg' %}" alt="hero image illustration">
+                              </div>
+                        </div>
+                  </div>
+            </main>
+            <footer>
+
+            </footer>
+      </div>   
+</body>
+</html>

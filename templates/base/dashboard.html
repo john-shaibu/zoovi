@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="keywords" content="video editor, video, video sharing platform, video website">
+      <meta name="description" content="zoovi is a web application that allows you to upload your video to be able to edit them or share them to any platform">
+      <link rel="stylesheet" href="{% static 'styles/dash.css' %}">
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+      <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+      <title>Dashboard - Zoovi</title>
+
+</head>
+<body>
+      <div class="site">
+            <header>
+                  <span class="menuBtn">
+                        <i class="ri-menu-line"></i>
+                  </span>
+                  <div class="logo">
+                        <a href="{% url 'home' %}">ZOOVI</a>
+                  </div>
+            </header>
+            <main>
+                  <!--Side navigation starte here -->
+                  <aside>
+                        <ul>
+                              <li class="activeNav">
+                                    <a href="{% url 'dashboard' %}">
+                                          <i class="ri-home-6-line"></i>
+                                          <span>Home</span>
+                                    </a>
+                              </li>
+                              <li>
+                                    <a href="">
+                                          <i class="ri-star-line"></i>
+                                          <span>Favorite</span>
+                                    </a>
+                              </li>
+                              <li>
+                                    <a href="">
+                                          <i class="ri-settings-4-line"></i>
+                                          <span>Settings</span>
+                                    </a>
+                              </li>
+                              <li>
+                                    <a href="">
+                                          <i class="ri-mail-line"></i>
+                                          <span>Contact us</span>
+                                    </a>
+                              </li>
+                              <li>
+                                    <a href="">
+                                          <i class="ri-key-line"></i>
+                                          <span>Privacy & policy</span>
+                                    </a>
+                              </li>
+                              <li>
+                                    <a href="">
+                                          <i class="ri-vip-crown-line"></i>
+                                          <span>Package</span>
+                                    </a>
+                              </li>
+                              
+                        </ul>
+                  </aside>
+                  <!-- Side navigatio ends here -->
+                  <!-- the page content starts here  -->
+                  <section class="inner">
+                        {% for video in videos %}
+                              <a href="#" target="_top" class="videoContainer">
+                                    <div class="video">
+                                          <video src="{{ request.video.url }}"></video>
+                                    </div>
+                                    <div class="videoDetails">
+                                          <p class="videoTitle">File Uploader with javascript</p>
+                                          <p class="videoDate">10-10-2022</p>
+                                          <p class="VideoSize">200 MB</p>
+                                    </div>
+                              </a>
+                        {% endfor %}
+                  </section>
+                  <!--Upload container starts here -->
+                  <div class="uploadUnderlay">
+                        <div class="uploadContainer">
+                              <span class="closeUploadBtn">
+                                    <i class="ri-close-line"></i>
+                              </span>
+                              <p>Upload your video</p>
+                              <form action="" method="post" id="upload-form">
+                                    {% csrf_token %}
+
+                                    {{form.as_p}}
+                                    <i class="ri-upload-cloud-2-fill"></i>
+                                    <p>Click to browse video or drag and drop video here to upload</p>
+                              </form>
+                              <section class="progress-area">
+                                    
+                              </section>
+                              <section class="uploaded-area">
+                                    
+                              </section>
+                        </div>
+                  </div>
+                  <!--the page content ends here-->
+                  <!-- uoload button -->
+                  <div class="uploadBtn" id="uploadBtn">
+                        <i class="ri-add-fill"></i>
+                  </div>
+            </main>
+            
+      </div>   
+      <script src="{% static 'scripts/script.js' %}"></script>
+</body>
+</html>
